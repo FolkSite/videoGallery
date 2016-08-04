@@ -8,7 +8,7 @@
 <div class="videogallery-wrapper">
     <div class="videogallery-form">
         <input type="text" id="vgUrl_{$tv->id}" class="videogallery-url" placeholder="Ссылка на видео для обработки"
-               value="{$array['video']}">
+               value="{if isset($array['video'])}{$array['video']}{/if}">
     </div>
     <div>
         <small>Вставьте в это поле ссылку на видео YouTube, чтобы её обработать.</small>
@@ -62,7 +62,8 @@
 'desc' => $_config.videogallery_field_desc,
 'image' => $_config.videogallery_field_image,
 'video' => $_config.videogallery_field_video,
-'videoId' => $_config.videogallery_field_videoId
+'videoId' => $_config.videogallery_field_videoId,
+'videoDuration' => $_config.videogallery_field_videoDuration
 ]}
 {foreach from=$fields key=name item=item}
     {if $item != ''}
